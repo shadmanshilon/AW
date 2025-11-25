@@ -1,0 +1,225 @@
+# .gitignore for mixed Node + Python + Playwright project
+# - Groups patterns by concern (OS, IDE, build, env, tests, etc.)
+# - Safe defaults; tweak or comment out blocks as needed for your team.
+
+###############################################################################
+# OS JUNK
+###############################################################################
+.DS_Store
+Thumbs.db
+
+###############################################################################
+# IDEs & EDITORS
+###############################################################################
+# JetBrains (IntelliJ, PyCharm, WebStorm, etc.)
+.idea/
+
+# VS Code workspace settings (ignore if you don't want editor config in git)
+# .vscode/
+
+# VS Code test temp folder
+.vscode-test
+
+###############################################################################
+# NODE / PACKAGE MANAGERS
+###############################################################################
+node_modules/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn-integrity
+.pnp.*
+
+###############################################################################
+# BUILD OUTPUT / BUNDLERS / STATIC SITES
+###############################################################################
+# Generic build artifacts
+build/
+build/Release
+dist/
+.build/
+
+# Common JS/TS frameworks & static-site generators
+.nuxt
+.next
+out
+.vuepress/dist
+.temp
+.docusaurus
+.serverless/
+.fusebox/
+.dynamodb/
+.cache
+.parcel-cache
+
+# Legacy / alt package systems
+.jspm_packages/
+bower_components
+web_modules/
+
+###############################################################################
+# APP BINARIES & ARCHIVES
+###############################################################################
+*.app
+*.exe
+*.tgz
+
+###############################################################################
+# LARGE MEDIA FILES (OPTIONAL)
+# Ignore heavy assets that don't belong in repo. Remove lines you want to track.
+###############################################################################
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+###############################################################################
+# LANG / TOOLING ARTIFACTS
+###############################################################################
+# Java / Maven
+*.class
+target/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.nar
+.mvn/
+mvnw
+mvnw.cmd
+
+# Python bytecode & metadata
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# TypeScript
+*.tsbuildinfo
+
+# Grunt / node-waf
+.grunt
+.lock-wscript
+
+# Microbundle / TS caches
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+###############################################################################
+# LOGS & REPORTS
+###############################################################################
+# Logs
+!logs/.gitkeep
+logs/*
+*.log
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Coverage reports
+coverage/
+.nyc_output
+*.lcov
+lib-cov
+
+# Unit test / CI JUnit-style reports
+TEST*.xml
+
+###############################################################################
+# RUNTIME / TEMP
+###############################################################################
+pids
+*.pid
+*.seed
+*.pid.lock
+.node_repl_history
+.npm
+.eslintcache
+.stylelintcache
+.tern-port
+
+###############################################################################
+# ENV FILES (SECRETS & LOCAL CONFIG)
+# These should not be committed; they usually contain secrets or machine-specific config.
+###############################################################################
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Any other env variants (e.g. .env.staging, .env.backup)
+.env.*
+
+###############################################################################
+# PYTHON VIRTUAL ENVS & TOOLING
+###############################################################################
+# Local venv
+.venv/
+
+# uv package manager cache/config
+.uv/
+uv.lock
+
+###############################################################################
+# PLAYWRIGHT / TEST ARTIFACTS
+###############################################################################
+# Playwright HTML/json reports
+playwright-report/*
+!playwright-report/.gitkeep
+
+# Generic test reports folder
+test-reports/
+
+# Artifacts: by default ignore everything...
+artifacts/*
+# ...but keep "setups" folder tracked for reusable setups & fixtures
+!artifacts/setups/
+!artifacts/setups/.gitkeep
+!artifacts/setups/**
+
+# Auth flows: keep ignored (usually large and ephemeral)
+artifacts/auth/
+
+# Test reports inside artifacts, but keep the folder itself
+artifacts/test_reports/*
+!artifacts/test_reports/.gitkeep
+reports/html/
+reports/json/
+reports/md/
+
+###############################################################################
+# PROJECT-SPECIFIC MISC
+###############################################################################
+# Run configurations / tooling config
+.run/Run Prettier.run.xml
+aqua.yaml
+
+# Session folders: keep structure with .gitkeep
+sessions/*
+!sessions/.gitkeep
+src/sessions/*
+!src/sessions/.gitkeep
+
+# Local trash / scratch area
+/trash/**
+
+# Clinic profiler output
+.clinic/
+
+
+/reports/html/
+/reports/json/ 
+/reports/screenshots/
+!reports/md/.gitkeep
+/reports/md/*
+
+
+google-chrome-stable_current_amd64.deb

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--
+        Logback configuration for the test framework.
+
+        This configuration provides:
+        - Console output with colored logs for better readability
+        - File output to logs/testng.log with rotation
+        - Configurable log levels
+
+        To change log level, set the LOG_LEVEL environment variable or modify below.
+    -->
+
+    <!-- Console Appender - colored output to STDOUT -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %cyan([%thread]) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender - writes to logs/testng.log -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/testng.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger{40} - %msg%n</pattern>
+        </encoder>
+
+        <!-- Rolling policy - creates new log file daily or when size exceeds 10MB -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/testng.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <!-- Keep 30 days of logs -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Root logger configuration -->
+    <!--
+        Default log level: INFO
+        Available levels: TRACE, DEBUG, INFO, WARN, ERROR
+        Override with LOG_LEVEL environment variable if needed
+    -->
+    <root level="${LOG_LEVEL:-INFO}">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <!-- Framework-specific loggers -->
+    <logger name="com.allied.framework" level="INFO" />
+
+    <!-- Reduce noise from Selenium and other libraries -->
+    <logger name="org.openqa.selenium" level="WARN" />
+    <logger name="io.netty" level="WARN" />
+</configuration>
