@@ -1,8 +1,8 @@
 package com.allied.tests.e2e.dashboard;
 
-import com.allied.framework.pages.AssignLeavePage;
-import com.allied.framework.pages.LeavePage;
-import com.allied.framework.pages.PIM;
+import com.allied.framework.pages.AssignLeave.AssignLeavePage;
+import com.allied.framework.pages.LeaveSearch.LeavePage;
+import com.allied.framework.pages.PIM.PIM;
 import com.allied.framework.pages.dashboardpage.OrangeHrmDashboard;
 import com.allied.framework.pages.loginpagedemo.LoginSetup01;
 import com.allied.tests.BaseTest;
@@ -363,7 +363,7 @@ public class DashboardWidgetsTest extends BaseTest {
         // clickElement(driver, LeavePage.LEAVE_LIST_SUBMENU, 10);
 
         // Step 3: Enter Employee Name
-         sendKeysToElement(driver, AssignLeavePage.EMPLOYEE_NAME_INPUT, "shilon AW", 10, true);
+         sendKeysToElement(driver, LeavePage.EMPLOYEE_NAME_INPUT, "shilon AW", 10, true);
 
     // Wait for suggestion to appear
         Thread.sleep(1500); 
@@ -374,7 +374,18 @@ public class DashboardWidgetsTest extends BaseTest {
 
         // Step 4: Enter From and To dates
         sendKeysToElement(driver, LeavePage.FROM_DATE_INPUT, "2025-28-11", 10, true);
-        sendKeysToElement(driver, LeavePage.TO_DATE_INPUT, "2025-28-11", 10, true);
+        clickElement(driver, LeavePage.SELECT_STATUS, 10);
+
+                Actions actions1 = new Actions(driver);
+        for (int i = 0; i < 4; i++) {
+            actions1.sendKeys(Keys.ARROW_DOWN).perform();
+            Thread.sleep(300);   // optional
+        }
+
+        // Press Enter
+        actions.sendKeys(Keys.ENTER).perform();
+
+        Thread.sleep(5000);
 
         // Step 5: Click Search
         clickElement(driver, LeavePage.SEARCH_BUTTON, 10);

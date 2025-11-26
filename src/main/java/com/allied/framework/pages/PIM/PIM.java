@@ -1,10 +1,12 @@
-package com.allied.framework.pages;
+package com.allied.framework.pages.PIM;
 
 // import com.allied.framework.core.Env;
 // import com.allied.framework.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
+
+import com.allied.framework.pages.BasePage;
 
 /**
  * OrangeHRM login page object.

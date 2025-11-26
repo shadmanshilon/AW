@@ -1,4 +1,4 @@
-package com.allied.framework.pages;
+package com.allied.framework.pages.AssignLeave;
 import org.openqa.selenium.By;
 
 public class AssignLeavePage {
