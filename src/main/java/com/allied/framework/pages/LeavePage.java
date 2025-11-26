@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class LeavePage {
 
     // Menu navigation
-    public static final By LEAVE_MENU = By.xpath("//span[text()='Leave']");
+    public static final By LEAVE_MENU1 = By.xpath("//span[text()='Leave']");
     public static final By LEAVE_LIST_SUBMENU = By.xpath("//a[contains(@href,'viewLeaveList')]");
 
     // Filters
