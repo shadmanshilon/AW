@@ -2,7 +2,9 @@ package com.allied.framework.pages.LeaveSearch;
 
 import org.openqa.selenium.By;
 
-public class LeavePage {
+import com.allied.framework.pages.BasePage;
+
+public class LeavePage extends BasePage {
 
     // Menu navigation
     public static final By LEAVE_MENU1 = By.xpath("//span[text()='Leave']");

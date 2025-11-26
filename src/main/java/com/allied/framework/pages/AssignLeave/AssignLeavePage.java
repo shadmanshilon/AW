@@ -1,7 +1,9 @@
 package com.allied.framework.pages.AssignLeave;
 import org.openqa.selenium.By;
 
-public class AssignLeavePage {
+import com.allied.framework.pages.BasePage;
+
+public class AssignLeavePage extends BasePage {
     // Navigation
     public static final By LEAVE_MENU = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-navigation > aside > nav > div.oxd-sidepanel-body > ul > li:nth-child(3) > a");
     public static final By ASSIGN_LEAVE = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-navigation > header > div.oxd-topbar-body > nav > ul > li:nth-child(7)");
