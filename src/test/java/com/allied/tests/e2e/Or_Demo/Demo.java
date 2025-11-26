@@ -1,4 +1,6 @@
-package com.allied.tests.e2e.dashboard;
+package com.allied.tests.e2e.Or_Demo;
+
+// package com.allied.tests.e2e.dashboard;
 
 import com.allied.framework.pages.AssignLeave.AssignLeavePage;
 import com.allied.framework.pages.LeaveSearch.LeavePage;
@@ -47,8 +49,8 @@ import java.util.stream.Collectors;
  * @see OrangeHrmDashboard
  * @see LoggedInBaseTest
  */
-public class DashboardWidgetsTest extends BaseTest {
-    private static final Logger logger = com.allied.framework.core.Logger.getLogger(DashboardWidgetsTest.class);
+public class Demo extends BaseTest {
+    private static final Logger logger = com.allied.framework.core.Logger.getLogger(Demo.class);
 
     /**
      * Tests that dashboard displays exactly 7 widgets.
