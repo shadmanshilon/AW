@@ -52,7 +52,7 @@ public class PIM extends BasePage {
      * Username input field locator.
      * <p>HTML: {@code <input name="username" />}</p>
      */
-    public static final By PIM_MENU = By.xpath("//span[text()='PIM']");
+    public static final By PIM_MENU = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-navigation > aside > nav > div.oxd-sidepanel-body > ul > li:nth-child(2) > a > span");
     
     
     public static final By ADD_BUTTON = By.xpath("//button[normalize-space()='Add']"); 
@@ -63,13 +63,11 @@ public class PIM extends BasePage {
     public static final By LAST_NAME_INPUT = By.xpath("//input[@name='lastName']"); 
 
 
-    public static final By SAVEBUTTON = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]"); 
+    public static final By SAVEBUTTON = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div > form > div.oxd-form-actions > button.oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space"); 
     
-    public static final By FILTER = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div/input"); 
+    public static final By FILTER = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div.oxd-table-filter > div.oxd-table-filter-area > form > div.oxd-form-row > div > div:nth-child(1) > div > div:nth-child(2) > div > div > input"); 
 
-    public static final By SEARCH = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
-
-
+    public static final By SEARCH = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div.oxd-table-filter > div.oxd-table-filter-area > form > div.oxd-form-actions > button.oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space");
 
 
    
